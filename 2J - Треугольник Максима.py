@@ -1,30 +1,36 @@
-N, M, K = list(map(int, input().split()))
-mines = []
-for i in range(K):
-    mines.append(list(map(int, input().split())))
+# Test 6 failed
+n = int(input())
+first_freq = float(input())
+notes = []
+for i in range(1, n):
+    freq, closer = input().split()
+    closer = True if closer == 'closer' else False
+    notes.append([float(freq), closer])
 
-field = []
-for i in range(N):
-    field.append([0 for i in range(M)])
+freq_min = 30
+freq_max = 4000
 
-for mine in mines:
-    x = mine[0] - 1
-    y = mine[1] - 1
-    field[x][y] = '*'
+for i in range(len(notes)):
+    if i == 0:
+        freq = first_freq
 
-for i in range(N):
-    for j in range(M):
-        n_mines = 0
-        if field[i][j] != '*':
-            for x in [i-1, i, i+1]:
-                for y in [j-1, j, j+1]:
-                    if x < 0 or y < 0 or x > N-1 or y > M-1:
-                        continue
-                    else:
-                        if field[x][y] == '*':
-                            n_mines += 1
+    freq_new = notes[i][0]
+    closer = notes[i][1]
+    dist = freq - freq_new
+    if (closer and freq_new < freq) or (not closer and freq_new > freq):
+        if freq_new + dist/2 < freq_max:
+            freq_max = freq_new + dist/2
+    else:
+        if freq_new + dist/2 > freq_min:
+            freq_min = freq_new + dist/2
+    freq = freq_new
 
-            field[i][j] = n_mines
+print(freq_min, freq_max)
+
         
-for i in range(N):
-    print(*field[i])
+
+
+
+
+
+
