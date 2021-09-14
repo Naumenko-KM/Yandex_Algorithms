@@ -1,27 +1,20 @@
-n = int(input())
-numbers = list(map(int, input().split()))
+numbers = [1,2,3,4,5,5,7,7,-1,-2]
 
-
-def find_max_place(numbers):
-    vasya_place = 0
-    vasya_value = 0
-    if len(numbers) > 2:
-        max_value = max(numbers)
-        max_index = numbers.index(max_value)
-        min_value = min(numbers)
-        min_index = numbers.index(min_value)
-
-        for i in range(min_index-1, len(numbers)-1):
-            if max_index < i and numbers[i+1] == min_value:
-                if numbers[i]%5 == 0 and (numbers[i]/5)%2==1:
-                    if numbers[i] > vasya_value:
-                        vasya_value = numbers[i]
-
-        if vasya_value != 0:
-            vasya_place = 1
-            for value in numbers:
-                if value > vasya_value:
-                    vasya_place += 1
-    return vasya_place 
-
-print(find_max_place(numbers))
+def find_max_mult(numbers):
+	
+	max1 = max(numbers)
+	numbers2 = numbers.copy()
+	numbers2.remove(max1)
+	max2 = max(numbers2)
+	
+	min1 = min(numbers)
+	numbers2 = numbers.copy()
+	numbers2.remove(min1)
+	min2 = min(numbers2)
+	
+	if max1*max2 > min1*min2:
+		return max1, max2
+	else:
+		return min1, min2 
+	
+print(find_max_mult(numbers))
