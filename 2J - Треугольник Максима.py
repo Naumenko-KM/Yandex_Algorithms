@@ -1,4 +1,3 @@
-# Test 6 failed
 n = int(input())
 first_freq = float(input())
 notes = []
