@@ -14,7 +14,7 @@ def how_many_numbers_add(seq):
     for i in range(len(seq)+1):
         if is_symmetric(seq+seq_add):
             print(len(seq_add))
-            print(seq_add)
+            print(*seq_add)
             break
         else:
             seq_add = [seq[i]] + seq_add
