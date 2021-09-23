@@ -1,3 +1,4 @@
+# Time limit error
 N = int(input())
 right_words = []
 right_words_lower = []
@@ -12,16 +13,13 @@ cnt = 0
 # print(right_words)
 # print(right_words_lower)
 for word in words:
-    upper=0
-    lower=0
+    upper = 0
+    lower = 0
     for i in range(len(word)):
-      #to lower case letter
-        if(word[i]>='a' and word[i]<='z'):
-            lower+=1
-      #to upper case letter
-        elif(word[i]>='A' and word[i]<='Z'):
-            upper+=1
-    # print(word)
+        if(word[i] >= 'a' and word[i] <= 'z'):
+            lower += 1
+        elif(word[i] >= 'A' and word[i] <= 'Z'):
+            upper += 1
     if word not in right_words and word.lower() in right_words_lower:
         cnt += 1
     elif upper != 1:

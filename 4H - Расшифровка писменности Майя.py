@@ -7,6 +7,7 @@ lenW, lenS = list(map(int, lines[0].split()))
 word = lines[1][:-1]
 syms = lines[2]
 
+
 def is_word_in_syms(word_dict, syms_dict):
     cnt = 0
     for letter in word_dict:
@@ -19,13 +20,13 @@ def is_word_in_syms(word_dict, syms_dict):
         return 0
 
 
-word_dict = {i : 0 for i in word}
+word_dict = {i: 0 for i in word}
 
 
 for letter in word:
     word_dict[letter] += 1
 
-syms_dict = {i:0 for i in syms}
+syms_dict = {i: 0 for i in syms}
 for letter in syms[0:lenW]:
     syms_dict[letter] += 1
 

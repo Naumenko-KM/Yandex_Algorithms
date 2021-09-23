@@ -7,7 +7,7 @@ with open('input.txt') as f:
 n, C, D = lines[0].split()
 n = int(n)
 program = " ".join(lines[1:])
-chars = ''.join([i for i in string.printable if i not in string.ascii_uppercase+string.ascii_lowercase+string.digits + '_ \n'])
+chars = ''.join([i for i in string.printable if i not in string.ascii_uppercase + string.ascii_lowercase+string.digits + '_ \n'])
 # print(n, C, D)
 # print(program)
 # print()
@@ -28,6 +28,8 @@ for identifier in identifiers:
     if not is_number_begin:
         if identifier[0] in '1234567890':
             pass
+    if identifier.isdigit():
+        pass
     if identifier in identifiers_dict.keys():
         identifiers_dict[identifier] += 1
     else:

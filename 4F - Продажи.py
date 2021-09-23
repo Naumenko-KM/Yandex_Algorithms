@@ -11,7 +11,7 @@ for line in lines:
         else:
             db[name][product] = cnt
     else:
-        db[name] = {product:cnt}
+        db[name] = {product: cnt}
 for name in sorted(db.keys()):
     print(name+":")
     for product in sorted(db[name].keys()):
