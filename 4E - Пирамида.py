@@ -11,5 +11,3 @@ height = 0
 for key in blocks:
     height += blocks[key]
 print(height)
-
-

@@ -16,4 +16,3 @@ for name in sorted(db.keys()):
     print(name+":")
     for product in sorted(db[name].keys()):
         print(product, db[name][product])
-

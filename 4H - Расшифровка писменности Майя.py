@@ -38,5 +38,3 @@ for i in range(1, lenS-lenW+1):
     syms_dict[syms[i-1]] -= 1
     cnt += is_word_in_syms(word_dict, syms_dict)
 print(cnt)
-
-
