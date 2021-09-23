@@ -1,18 +1,41 @@
-g, S = list(map(int, input().split()))
-word = input()
-syms = input()
+# Time limit
 
-def all_perms(elements):
-    if len(elements) <=1:
-        yield elements
+with open('input.txt') as f:
+    lines = f.readlines()
+
+lenW, lenS = list(map(int, lines[0].split()))
+word = lines[1][:-1]
+syms = lines[2]
+
+def is_word_in_syms(word_dict, syms_dict):
+    cnt = 0
+    for letter in word_dict:
+        if letter in syms_dict.keys():
+            if word_dict[letter] == syms_dict[letter]:
+                cnt += 1
+    if cnt == len(word_dict):
+        return 1
     else:
-        for perm in all_perms(elements[1:]):
-            for i in range(len(elements)):
-                yield perm[:i] + elements[0:1] + perm[i:]
+        return 0
 
-all_words = [word for word in all_perms(word)]
 
-cnt = 0
-for word in all_words:
-    cnt += syms.count(word)
+word_dict = {i : 0 for i in word}
+
+
+for letter in word:
+    word_dict[letter] += 1
+
+syms_dict = {i:0 for i in syms}
+for letter in syms[0:lenW]:
+    syms_dict[letter] += 1
+
+
+cnt = is_word_in_syms(word_dict, syms_dict)
+
+for i in range(1, lenS-lenW+1):
+    syms_dict[syms[i+lenW-1]] += 1
+    syms_dict[syms[i-1]] -= 1
+    cnt += is_word_in_syms(word_dict, syms_dict)
 print(cnt)
+
+
