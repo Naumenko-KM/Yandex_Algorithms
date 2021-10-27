@@ -1,3 +1,4 @@
+# test 10 failed
 N = int(input())
 tshorts_list = list(map(int, input().split()))
 M = int(input())
@@ -12,10 +13,12 @@ jeans_best = jeans_list[0]
 for i in range(N):
     if M != 1:
         for j in range(jeans_ind, M-1):
-            if abs(tshorts_list[i] - jeans_list[j+1]) < abs(tshort_best-jeans_best):
+            if abs(tshorts_list[i] - jeans_list[j+1]) < \
+                    abs(tshort_best - jeans_best):
                 tshort_best = tshorts_list[i]
                 jeans_best = jeans_list[j+1]
-            if abs(tshorts_list[i] - jeans_list[j]) <= abs(tshorts_list[i] - jeans_list[j+1]):
+            if abs(tshorts_list[i] - jeans_list[j]) <= \
+                    abs(tshorts_list[i] - jeans_list[j+1]):
                 jeans_ind = j
                 break
             if tshort_best == jeans_best:

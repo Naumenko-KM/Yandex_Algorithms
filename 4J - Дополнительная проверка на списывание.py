@@ -7,10 +7,10 @@ with open('input.txt') as f:
 n, C, D = lines[0].split()
 n = int(n)
 program = " ".join(lines[1:])
-chars = ''.join([i for i in string.printable if i not in string.ascii_uppercase + string.ascii_lowercase+string.digits + '_ \n'])
-# print(n, C, D)
-# print(program)
-# print()
+chars = ''.join([i for i in string.printable if
+                i not in string.ascii_uppercase
+                + string.ascii_lowercase+string.digits + '_ \n'])
+
 
 is_register_important = True if C == 'yes' else False
 is_number_begin = True if D == 'yes' else False
@@ -19,7 +19,7 @@ if not is_register_important:
     program = program.lower()
 
 program = program.translate({ord(i): " " for i in chars})
-# print(program)
+
 
 identifiers = program.split()
 identifiers_dict = {}
@@ -37,4 +37,4 @@ for identifier in identifiers:
     if identifiers_dict[identifier] > max_cnt:
         max_cnt = identifiers_dict[identifier]
         identifier_max = identifier
-print(identifier_max) 
+print(identifier_max)
