@@ -1,5 +1,6 @@
 numbers = list(map(int, input().split()))
 
+
 def find_max_mult(numbers):
 
     if len(numbers) >= 6:
@@ -15,7 +16,7 @@ def find_max_mult(numbers):
     else:
         n = len(numbers)
         abs_numbers = numbers
-    
+
     max_mult = float('-inf')
     for i in range(n):
         for j in range(n):
@@ -24,8 +25,10 @@ def find_max_mult(numbers):
                     continue
                 max_mult_new = abs_numbers[i] * abs_numbers[j] * abs_numbers[k]
                 if max_mult_new > max_mult:
-                    num1, num2, num3 = abs_numbers[i], abs_numbers[j], abs_numbers[k]
+                    num1, num2, num3 = (abs_numbers[i], abs_numbers[j],
+                                        abs_numbers[k])
                     max_mult = max_mult_new
-    return num1, num2, num3            
+    return num1, num2, num3
+
 
 print(*find_max_mult(numbers))

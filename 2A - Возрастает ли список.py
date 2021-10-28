@@ -1,5 +1,6 @@
 numbers = list(map(int, input().split()))
 
+
 def is_growing(numbers):
     flag = 'YES'
     if numbers:
@@ -9,8 +10,9 @@ def is_growing(numbers):
             if y > x:
                 flag = 'YES'
             else:
-                flag = 'NO' 
+                flag = 'NO'
                 break
     print(flag)
+
 
 is_growing(numbers)

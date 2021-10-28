@@ -13,10 +13,10 @@ if a == 0 and b == 0 and c == 0 and d == 0:
     print(5)
 
 elif b == 0 and d == 0:
-        print(3, e/a)
+    print(3, e/a)
 
 elif a == 0 and c == 0:
-        print(4, e/b)
+    print(4, e/b)
 
 # elif b == 0 and d == 0:
 #     if a == 0:

@@ -25,11 +25,3 @@ for i in range(len(notes)):
     freq = freq_new
 
 print(freq_min, freq_max)
-
-        
-
-
-
-
-
-

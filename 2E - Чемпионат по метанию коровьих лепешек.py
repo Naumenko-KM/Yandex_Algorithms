@@ -1,4 +1,4 @@
-# Test 9 failed 
+# Test 9 failed
 n = int(input())
 numbers = list(map(int, input().split()))
 
@@ -14,7 +14,7 @@ def find_max_place(numbers):
 
         for i in range(min_index-1, len(numbers)-1):
             if max_index < i and numbers[i+1] == min_value:
-                if numbers[i]%5 == 0 and (numbers[i]/5)%2==1:
+                if numbers[i] % 5 == 0 and (numbers[i]/5) % 2 == 1:
                     if numbers[i] > vasya_value:
                         vasya_value = numbers[i]
 
@@ -23,6 +23,7 @@ def find_max_place(numbers):
             for value in numbers:
                 if value > vasya_value:
                     vasya_place += 1
-    return vasya_place 
+    return vasya_place
+
 
 print(find_max_place(numbers))

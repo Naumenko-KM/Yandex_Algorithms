@@ -25,6 +25,6 @@ for i in range(N):
                             n_mines += 1
 
             field[i][j] = n_mines
-        
+
 for i in range(N):
     print(*field[i])

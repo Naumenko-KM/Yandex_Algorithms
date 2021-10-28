@@ -15,5 +15,3 @@ else:
         sol = 'NO SOLUTION'
 
 print(sol)
-
-

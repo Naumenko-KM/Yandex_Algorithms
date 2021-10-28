@@ -12,10 +12,11 @@ for _ in range(n):
 
 all_known_languages = None
 for child in children:
-    if all_known_languages == None:
+    if all_known_languages is None:
         all_known_languages = child
-    
-    all_known_languages = set([language for language in all_known_languages if language in child])
+
+    all_known_languages = set([language for language in all_known_languages
+                              if language in child])
 
 print(len(all_known_languages))
 for language in all_known_languages:
@@ -23,5 +24,3 @@ for language in all_known_languages:
 print(len(languages))
 for language in languages:
     print(language)
-
-

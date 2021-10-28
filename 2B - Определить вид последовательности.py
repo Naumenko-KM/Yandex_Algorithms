@@ -7,7 +7,6 @@ while True:
 
 
 def what_a_numbers(numbers):
-    
     flag = 'NO'
     if numbers:
         for i in range(len(numbers)-1):
@@ -23,7 +22,7 @@ def what_a_numbers(numbers):
                 else:
                     flag = 'RANDOM'
             elif y > x:
-                if flag == 'ASCENDING' or flag == 'NO' :
+                if flag == 'ASCENDING' or flag == 'NO':
                     flag = 'ASCENDING'
                 elif flag == 'WEAKLY ASCENDING' or flag == 'CONSTANT':
                     flag = 'WEAKLY ASCENDING'
@@ -38,7 +37,8 @@ def what_a_numbers(numbers):
                     flag = 'RANDOM'
     if flag == 'NO':
         flag = 'RANDOM'
-            
-    return flag 
+
+    return flag
+
 
 print(what_a_numbers(numbers))
