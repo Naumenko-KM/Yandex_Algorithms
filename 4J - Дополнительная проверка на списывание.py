@@ -9,7 +9,7 @@ n = int(n)
 program = " ".join(lines[1:])
 chars = ''.join([i for i in string.printable if
                 i not in string.ascii_uppercase
-                + string.ascii_lowercase+string.digits + '_ \n'])
+                + string.ascii_lowercase + string.digits + '_ \n'])
 
 
 is_register_important = True if C == 'yes' else False
