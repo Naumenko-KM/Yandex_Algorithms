@@ -1,7 +1,7 @@
 import random
 
 
-def findbestpairslow(N, tshorts_list, M, jeans_list):
+def find_best_pair_slow(N, tshorts_list, M, jeans_list):
     tshort_best = tshorts_list[0]
     jeans_best = jeans_list[0]
 
@@ -14,7 +14,7 @@ def findbestpairslow(N, tshorts_list, M, jeans_list):
     return tshort_best, jeans_best
 
 
-def findbestpairfast(N, tshorts_list, M, jeans_list):
+def find_best_pair_fast(N, tshorts_list, M, jeans_list):
     jeans_ind = 0
     tshort_best = tshorts_list[0]
     jeans_best = jeans_list[0]
@@ -45,9 +45,9 @@ def checking(N, M):
             jeans_list = [random.randint(1, 100) for iter in range(j)]
             jeans_list = sorted(list(dict.fromkeys(jeans_list)))
 
-            slow = findbestpairslow(len(tshorts_list), tshorts_list,
+            slow = find_best_pair_slow(len(tshorts_list), tshorts_list,
                                     len(jeans_list), jeans_list)
-            fast = findbestpairfast(len(tshorts_list), tshorts_list,
+            fast = find_best_pair_fast(len(tshorts_list), tshorts_list,
                                     len(jeans_list), jeans_list)
 
             if abs(slow[0]-slow[1]) != abs(fast[0]-fast[1]):
