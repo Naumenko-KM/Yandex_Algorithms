@@ -30,8 +30,6 @@ def find_shortest_segment_slow(N, trees):
     return i_best, j_best
 
 
-
-
 def find_shortest_segment_fast(N, trees):
     classes = set(trees)
     i_best = 1
