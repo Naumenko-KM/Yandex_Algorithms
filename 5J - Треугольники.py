@@ -40,4 +40,26 @@ def find_all_triangles_slow(points):
     return num
 
 
-print(find_all_triangles_slow(points))
+def find_all_triangles_fast(n, points):
+    num = 0
+    for i in range(n):
+        used_vectors = set()
+        neig = []
+        for j in range(n):
+            vecx = points[i][0] - points[j][0]
+            vecy = points[i][1] - points[j][1]
+            veclen = vecx ** 2 + vecy ** 2
+            neig.append(veclen)
+            if (vecx, vecy) in used_vectors:
+                num -= 1
+            used_vectors.add((-vecx, -vecy))
+        neig.sort()
+        r = 0
+        for le in range(len(neig)):
+            while r < len(neig) and neig[le] == neig[r]:
+                r += 1
+            num += r - le - 1
+    return num
+
+
+print(find_all_triangles_fast(n, points))
