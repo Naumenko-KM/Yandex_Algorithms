@@ -46,9 +46,9 @@ def checking(N, M):
             jeans_list = sorted(list(dict.fromkeys(jeans_list)))
 
             slow = find_best_pair_slow(len(tshorts_list), tshorts_list,
-                                    len(jeans_list), jeans_list)
+                                       len(jeans_list), jeans_list)
             fast = find_best_pair_fast(len(tshorts_list), tshorts_list,
-                                    len(jeans_list), jeans_list)
+                                       len(jeans_list), jeans_list)
 
             if abs(slow[0]-slow[1]) != abs(fast[0]-fast[1]):
                 print(tshorts_list)
