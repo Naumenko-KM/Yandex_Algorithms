@@ -12,3 +12,21 @@ def slow(sequences, L):
 
 
 slow(sequences, L)
+
+
+def left_bin_search(left, right, check, checkparams):
+    while left < right:
+        m = (left + right) // 2
+        if check(m, checkparams):
+            right = m
+        else:
+            left = m + 1
+    return left
+
+
+# def check(m, checkparams):
+#     seq1, seq2, L = checkparams
+#     cnt = 0
+#     for seq in sequences:
+#         # cnt += wire // m
+#     # return cnt >= K    
